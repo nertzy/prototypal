@@ -7,11 +7,16 @@ module Prototypal
     end
 
     def respond_to_missing?(name, include_private = false)
-      @prototype.respond_to?(name) || super
+      @prototype.respond_to?(name, include_private) || super
     end
 
     def method_missing(name, *args, &block)
-      return @prototype.send(name, *args, &block) if respond_to_missing?(name)
+      return @prototype.public_send(name, *args, &block) if @prototype.respond_to?(name)
+      super
+    end
+
+    def send(name, *args, &block)
+      return @prototype.send(name, *args, &block) if @prototype.respond_to?(name, true)
       super
     end
 
