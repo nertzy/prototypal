@@ -1,6 +1,6 @@
-require "proto"
+require "prototypal"
 
-module Proto
+module Prototypal
   class Object
     def initialize(prototype = nil)
       @prototype = prototype
@@ -16,7 +16,7 @@ module Proto
     end
 
     def inspect
-      "#<Proto::Object @prototype=#{@prototype.inspect}>"
+      "#<Prototypal::Object @prototype=#{@prototype.inspect}>"
     end
   end
 end

@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'proto/version'
+require 'prototypal/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "proto"
-  spec.version       = Proto::VERSION
+  spec.name          = "prototypal"
+  spec.version       = Prototypal::VERSION
   spec.authors       = ["Grant Hutchins"]
   spec.email         = ["nertzy@gmail.com"]
   spec.description   = %q{Prototypal Ruby objects}
